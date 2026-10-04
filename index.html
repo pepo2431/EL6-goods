@@ -211,12 +211,12 @@
 	@media (max-width: 600px) {
 
     		.members {
-        		flex-wrap: wrap;
+        		display: grid;
+        		grid-template-columns: repeat(2, 1fr);
         		gap: 10px;
     		}
 
     		.member {
-        		width: calc(50% - 10px);
         		box-sizing: border-box;
     		}
 
