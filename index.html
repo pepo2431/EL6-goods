@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+	<title>EL6 VERSE LIVE GOODS</title>
+
+	<style>
+
+	body {
+		background: #171717;
+    		color: #f5f5f5;
+    		font-family: "Arial", "Meiryo", sans-serif;
+    		text-align: center;
+	}
+
+
+
+		h1 {
+    			text-align: center;
+    			color: #ffffff;
+    			letter-spacing: 4px;
+		}
+
+		h2 {
+			text-align: center;
+    			color: #ffffff;
+    			padding-bottom: 8px;
+		}
+
+
+	.goods-card {
+    		background: #1c1c1c;
+    		border: 1px solid #777777;
+    		border-radius: 16px;
+    		padding: 25px;
+		margin: 25px auto;
+
+    		box-shadow:
+        		0 0 6px rgba(255, 255, 255, 0.3),
+        		0 0 18px rgba(255, 255, 255, 0.1);
+	}
+
+
+	.goods-card h2 {
+    		color: #f5f5f5;
+    		margin-top: 0;
+    		margin-bottom: 20px;
+
+		display: inline-block;
+    		padding: 0 30px 8px;
+
+    		position: relative;
+
+    		text-shadow:
+        		0 0 5px rgba(255, 255, 255, 0.7),
+        		0 0 12px rgba(255, 255, 255, 0.35);
+
+		border-bottom: none;
+
+	}
+
+	.goods-card h2::after {
+    		content: "";
+
+    		position: absolute;
+    		left: 0;
+    		bottom: 0;
+
+    		width: 100%;
+		height: 1px;
+
+    		background: #ffffff;
+
+    		box-shadow:
+        		0 0 4px rgba(255, 255, 255, 0.8),
+        		0 0 10px rgba(255, 255, 255, 0.4);
+		}
+
+
+	.member {
+    			background: #242424;
+			border: 1px solid var(--member-color);
+    			border-radius: 12px;
+    			padding: 15px;
+
+    			box-shadow:
+        			0 0 8px rgba(255, 255, 255, 0.5),
+        			0 0 20px rgba(255, 255, 255, 0.2);
+	}
+
+
+	.member h3 {
+    		color: var(--member-color);
+    		text-shadow:
+			0 0 5px rgba(255, 255, 255, 0.7),
+			0 0 12px rgba(255, 255, 255, 0.35);
+	}
+
+	.members {
+    		display: flex;
+    		justify-content: center;
+    		gap: 20px;
+	}
+
+
+	.haruki {
+		    --member-color: #9400d3;
+	}
+
+	.take {
+		    --member-color: #f50967;
+	}
+
+	.neiro {
+		    --member-color: #00b2d6;
+	}
+
+	.tsubasa {
+		    --member-color: #e5003c;
+	}
+
+	.mitsu {
+		    --member-color: #fff44f;
+	}
+
+	.jil {
+		    --member-color: #FFFFFF;
+	}
+
+
+	.quantity {
+    		display: flex;
+    		justify-content: center;
+    		align-items: center;
+    		gap: 8px;
+	}
+
+	.quantity button {
+    		width: 35px;
+    		height: 35px;
+
+    		background: #151515;
+    		color: #ffffff;
+
+    		border: 1px solid #777777;
+    		border-radius: 8px;
+
+    		font-size: 18px;
+    		cursor: pointer;
+	}
+
+	.quantity button:hover {
+    		background: #2a2a2a;
+    		border-color: #aaaaaa;
+	}
+
+	.quantity input {
+    		width: 50px;
+    		height: 35px;
+
+    		background: #151515;
+    		color: #ffffff;
+
+    		border: 1px solid #777777;
+    		border-radius: 8px;
+
+    		text-align: center;
+    		font-size: 16px;
+	}
+
+	input[type="number"]::-webkit-inner-spin-button,
+	input[type="number"]::-webkit-outer-spin-button {
+    		-webkit-appearance: none;
+    		margin: 0;
+	}
+
+
+
+	</style>
+
+</head>
+
+<body>
+ 
+	<h1>EL6 VERSE LIVE GOODS</h1>
+	<p>グッズ購入計算機<p>
+
+<div class="goods-card">
+
+<!-- アクリルスタンド -->
+	<h2>VERSE アクリルスタンド</h2>
+	<p>【全6種】各1,800円</p>
+
+<div class="members">
+
+	<div class="member haruki">
+	<h3>春希</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+    	<input type="number" id="acstaHaruki" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="acstaHarukiTotal">0</span>円</p>
+	</div>
+
+	<div class="member take">
+	<h3>ていく</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="acstaTake" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="acstaTakeTotal">0</span>円</p>
+	</div>
+
+	<div class="member neiro">
+	<h3>ねいろ</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="acstaNeiro" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="acstaNeiroTotal">0</span>円</p>
+	</div>
+
+	<div class="member tsubasa">
+	<h3>ツバサ</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="acstaTsubasa" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="acstaTsubasaTotal">0</span>円</p>
+	</div>
+
+	<div class="member mitsu">
+	<h3>832</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="acstaMitsu" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="acstaMitsuTotal">0</span>円</p>
+	</div>
+
+	<div class="member jil">
+	<h3>JIL</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="acstaJil" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="acstaJilTotal">0</span>円</p>
+	</div>
+
+</div>
+
+</div>
+
+
+<div class="goods-card">
+
+<!-- アクリルキーホルダー -->
+	<h2>VERSE アクリルキーホルダー</h2>
+	<p>【全6種】各1,000円</p>
+
+<div class="members">
+
+	<div class="member haruki">
+	<h3>春希</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="ackeyHaruki" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="ackeyHarukiTotal">0</span>円</p>
+	</div>
+
+	<div class="member take">
+	<h3>ていく</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="ackeyTake" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="ackeyTakeTotal">0</span>円</p>
+	</div>
+
+	<div class="member neiro">
+	<h3>ねいろ</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="ackeyNeiro" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="ackeyNeiroTotal">0</span>円</p>
+	</div>
+
+	<div class="member tsubasa">
+	<h3>ツバサ</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="ackeyTsubasa" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="ackeyTsubasaTotal">0</span>円</p>
+	</div>
+
+	<div class="member mitsu">
+	<h3>832</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="ackeyMitsu" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="ackeyMitsuTotal">0</span>円</p>
+	</div>
+
+	<div class="member jil">
+	<h3>JIL</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="ackeyJil" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="ackeyJilTotal">0</span>円</p>
+	</div>
+
+</div>
+
+</div>
+
+<div class="goods-card">
+
+<!-- ステッカーセット -->
+	<h2>VERSE ステッカーセット</h2>
+	<p>【全1種6枚組】1,000円</p>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="sticker" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="stickerTotal">0</span>円</p>
+
+</div>
+
+<div class="goods-card">
+
+<!-- BIGピクチャータオル -->
+	<h2>VERSE BIGピクチャータオル</h2>
+	<p>【全6種】各3,900円</p>
+
+<div class="members">
+
+	<div class="member haruki">
+	<h3>春希</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="taoruHaruki" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="taoruHarukiTotal">0</span>円</p>
+	</div>
+
+	<div class="member take">
+	<h3>ていく</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="taoruTake" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="taoruTakeTotal">0</span>円</p>
+	</div>
+
+	<div class="member neiro">
+	<h3>ねいろ</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="taoruNeiro" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="taoruNeiroTotal">0</span>円</p>
+	</div>
+
+	<div class="member tsubasa">
+	<h3>ツバサ</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="taoruTsubasa" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="taoruTsubasaTotal">0</span>円</p>
+	</div>
+
+	<div class="member mitsu">
+	<h3>832</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="taoruMitsu" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="taoruMitsuTotal">0</span>円</p>
+	</div>
+
+	<div class="member jil">
+	<h3>JIL</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="taoruJil" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="taoruJilTotal">0</span>円</p>
+	</div>
+
+</div>
+
+</div>
+
+<div class="goods-card">
+
+<!-- リボンスカーフ -->
+	<h2>VERSE リボンスカーフ</h2>
+	<p>【全6種】各1,700円</p>
+
+<div class="members">
+
+	<div class="member haruki">
+	<h3>春希</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="scarfHaruki" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="scarfHarukiTotal">0</span>円</p>
+	</div>
+
+	<div class="member take">
+	<h3>ていく</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="scarfTake" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="scarfTakeTotal">0</span>円</p>
+	</div>
+
+	<div class="member neiro">
+	<h3>ねいろ</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="scarfNeiro" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="scarfNeiroTotal">0</span>円</p>
+	</div>
+
+	<div class="member tsubasa">
+	<h3>ツバサ</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="scarfTsubasa" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="scarfTsubasaTotal">0</span>円</p>
+	</div>
+
+	<div class="member mitsu">
+	<h3>832</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="scarfMitsu" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="scarfMitsuTotal">0</span>円</p>
+	</div>
+
+	<div class="member jil">
+	<h3>JIL</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="scarfJil" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="scarfJilTotal">0</span>円</p>
+	</div>
+
+</div>
+
+</div>
+
+<div class="goods-card">
+
+<!-- VERSEリングライト -->
+	<h2>VERSE リングライト</h2>
+	<p>【全1種】1,000円</p>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="verseRingLight" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="verseRingLightTotal">0</span>円</p>
+
+</div>
+
+<div class="goods-card">
+
+<!-- ペンライトシート -->
+	<h2>VERSE ペンライトシート</h2>
+	<p>【全6種】各400円</p>
+
+<div class="members">
+
+	<div class="member haruki">
+	<h3>春希</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="sheetHaruki" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="sheetHarukiTotal">0</span>円</p>
+	</div>
+
+	<div class="member take">
+	<h3>ていく</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="sheetTake" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="sheetTakeTotal">0</span>円</p>
+	</div>
+
+	<div class="member neiro">
+	<h3>ねいろ</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="sheetNeiro" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="sheetNeiroTotal">0</span>円</p>
+	</div>
+
+	<div class="member tsubasa">
+	<h3>ツバサ</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="sheetTsubasa" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="sheetTsubasaTotal">0</span>円</p>
+	</div>
+
+	<div class="member mitsu">
+	<h3>832</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="sheetMitsu" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="sheetMitsuTotal">0</span>円</p>
+	</div>
+
+	<div class="member jil">
+	<h3>JIL</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="sheetJil" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="sheetJilTotal">0</span>円</p>
+	</div>
+
+</div>
+
+</div>
+
+
+<div class="goods-card">
+
+<!-- EL6 オフィシャルロゴライト -->
+	<h2>EL6 オフィシャルロゴライト</h2>
+	<p>【全1種】5,000円</p>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="logoLight" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="logoLightTotal">0</span>円</p>
+
+</div>
+
+
+<div class="goods-card">
+
+<!-- EL6 ペンライト -->
+	<h2>EL6 ペンライト</h2>
+	<p>【全1種】3,000円</p>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="penLight" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="penLightTotal">0</span>円</p>
+
+</div>
+
+
+<div class="goods-card">
+
+<!-- EL6リングライト -->
+	<h2>EL6リングライト</h2>
+	<p>【全1種】1,000円</p>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="ringLight" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="ringLightTotal">0</span>円</p>
+
+</div>
+
+
+<div class="goods-card">
+
+<!-- VERSE Tシャツ -->
+	<h2>VERSE Tシャツ</h2>
+	<p>【全1種】4,000円</p>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="tShirt" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="tShirtTotal">0</span>円</p>
+
+</div>
+
+
+<div class="goods-card">
+
+<!-- オフィシャルうちわ -->
+	<h2>VERSE EL6オフィシャルうちわ</h2>
+	<p>【全6種】各1,200円</p>
+
+<div class="members">
+
+	<div class="member haruki">
+	<h3>春希</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="uchiwaHaruki" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="uchiwaHarukiTotal">0</span>円</p>
+	</div>
+
+	<div class="member take">
+	<h3>ていく</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="uchiwaTake" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="uchiwaTakeTotal">0</span>円</p>
+	</div>
+
+	<div class="member neiro">
+	<h3>ねいろ</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="uchiwaNeiro" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="uchiwaNeiroTotal">0</span>円</p>
+	</div>
+
+	<div class="member tsubasa">
+	<h3>ツバサ</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="uchiwaTsubasa" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="uchiwaTsubasaTotal">0</span>円</p>
+	</div>
+
+	<div class="member mitsu">
+	<h3>832</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="uchiwaMitsu" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="uchiwaMitsuTotal">0</span>円</p>
+	</div>
+
+	<div class="member jil">
+	<h3>JIL</h3>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="uchiwaJil" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="uchiwaJilTotal">0</span>円</p>
+	</div>
+
+</div>
+
+</div>
+
+
+<div class="goods-card">
+
+<!-- EL6 ランダム缶バッチ -->
+	<h2>【第7弾】EL6 ランダム缶バッチ</h2>
+	<p>【全24種】500円</p>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="canBadge" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="canBadgeTotal">0</span>円</p>
+
+</div>
+
+
+<div class="goods-card">
+
+<!-- EL6 ランダムチェキ風トレカ -->
+	<h2>【第7弾】EL6 ランダムチェキ風トレカ</h2>
+	<p>【全24種】300円</p>
+
+	<div class="quantity">
+    	<button type="button" class="minus">−</button>
+	<input type="number" id="tradingCard" value="0" min="0" step="1">
+    	<button type="button" class="plus">＋</button>
+	</div>
+
+	<p>小計：<span id="tradingCardTotal">0</span>円</p>
+
+</div>
+
+
+<div class="goods-card">
+
+<!-- 合計金額 -->
+	<h2>合計金額</h2>
+	<p><span id="grandTotal">0</span>円</p>
+
+</div>
+
+
+<div class="goods-card">
+
+<!-- 購入予定一覧 -->
+	<h2>今回の購入予定一覧</h2>
+	<div id="purchaseList"></div>
+
+</div>
+
+
+<script>
+
+	function calculate(input, output, price) {
+		const quantity = Number(input.value);
+		const total = quantity * price;
+
+		output.textContent = total.toLocaleString();
+	}
+
+
+// アクリルスタンドの計算
+	const acstaHaruki = document.getElementById("acstaHaruki");
+	const acstaHarukiTotal = document.getElementById("acstaHarukiTotal");
+
+	const acstaTake = document.getElementById("acstaTake");
+	const acstaTakeTotal = document.getElementById("acstaTakeTotal");
+
+	const acstaNeiro = document.getElementById("acstaNeiro");
+	const acstaNeiroTotal = document.getElementById("acstaNeiroTotal");
+
+	const acstaTsubasa = document.getElementById("acstaTsubasa");
+	const acstaTsubasaTotal = document.getElementById("acstaTsubasaTotal");
+
+	const acstaMitsu = document.getElementById("acstaMitsu");
+	const acstaMitsuTotal = document.getElementById("acstaMitsuTotal");
+
+	const acstaJil = document.getElementById("acstaJil");
+	const acstaJilTotal = document.getElementById("acstaJilTotal");
+
+	acstaHaruki.addEventListener("input", function() {
+		calculate(acstaHaruki, acstaHarukiTotal, 1800);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	acstaTake.addEventListener("input", function() {
+		calculate(acstaTake, acstaTakeTotal, 1800);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	acstaNeiro.addEventListener("input", function() {
+		calculate(acstaNeiro, acstaNeiroTotal, 1800);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	acstaTsubasa.addEventListener("input", function() {
+		calculate(acstaTsubasa, acstaTsubasaTotal, 1800);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	acstaMitsu.addEventListener("input", function() {
+		calculate(acstaMitsu, acstaMitsuTotal, 1800);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	acstaJil.addEventListener("input", function() {
+		calculate(acstaJil, acstaJilTotal, 1800);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+
+
+// アクリルキーホルダーの計算
+	const ackeyHaruki = document.getElementById("ackeyHaruki");
+	const ackeyHarukiTotal = document.getElementById("ackeyHarukiTotal");
+
+	const ackeyTake = document.getElementById("ackeyTake");
+	const ackeyTakeTotal = document.getElementById("ackeyTakeTotal");
+
+	const ackeyNeiro = document.getElementById("ackeyNeiro");
+	const ackeyNeiroTotal = document.getElementById("ackeyNeiroTotal");
+
+	const ackeyTsubasa = document.getElementById("ackeyTsubasa");
+	const ackeyTsubasaTotal = document.getElementById("ackeyTsubasaTotal");
+
+	const ackeyMitsu = document.getElementById("ackeyMitsu");
+	const ackeyMitsuTotal = document.getElementById("ackeyMitsuTotal");
+
+	const ackeyJil = document.getElementById("ackeyJil");
+	const ackeyJilTotal = document.getElementById("ackeyJilTotal");
+
+	ackeyHaruki.addEventListener("input", function() {
+		calculate(ackeyHaruki, ackeyHarukiTotal, 1000);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	ackeyTake.addEventListener("input", function() {
+		calculate(ackeyTake, ackeyTakeTotal, 1000);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	ackeyNeiro.addEventListener("input", function() {
+		calculate(ackeyNeiro, ackeyNeiroTotal, 1000);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	ackeyTsubasa.addEventListener("input", function() {
+		calculate(ackeyTsubasa, ackeyTsubasaTotal, 1000);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	ackeyMitsu.addEventListener("input", function() {
+		calculate(ackeyMitsu, ackeyMitsuTotal, 1000);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	ackeyJil.addEventListener("input", function() {
+		calculate(ackeyJil, ackeyJilTotal, 1000);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+
+
+// ステッカーセットの計算
+	const sticker = document.getElementById("sticker");
+	const stickerTotal = document.getElementById("stickerTotal");
+
+	sticker.addEventListener("input", function() {
+		calculate(sticker, stickerTotal, 1000);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+
+
+// BIGピクチャータオルの計算
+	const taoruHaruki = document.getElementById("taoruHaruki");
+	const taoruHarukiTotal = document.getElementById("taoruHarukiTotal");
+
+	const taoruTake = document.getElementById("taoruTake");
+	const taoruTakeTotal = document.getElementById("taoruTakeTotal");
+
+	const taoruNeiro = document.getElementById("taoruNeiro");
+	const taoruNeiroTotal = document.getElementById("taoruNeiroTotal");
+
+	const taoruTsubasa = document.getElementById("taoruTsubasa");
+	const taoruTsubasaTotal = document.getElementById("taoruTsubasaTotal");
+
+	const taoruMitsu = document.getElementById("taoruMitsu");
+	const taoruMitsuTotal = document.getElementById("taoruMitsuTotal");
+
+	const taoruJil = document.getElementById("taoruJil");
+	const taoruJilTotal = document.getElementById("taoruJilTotal");
+
+	taoruHaruki.addEventListener("input", function() {
+		calculate(taoruHaruki, taoruHarukiTotal, 3900);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	taoruTake.addEventListener("input", function() {
+		calculate(taoruTake, taoruTakeTotal, 3900);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	taoruNeiro.addEventListener("input", function() {
+		calculate(taoruNeiro, taoruNeiroTotal, 3900);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	taoruTsubasa.addEventListener("input", function() {
+		calculate(taoruTsubasa, taoruTsubasaTotal, 3900);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	taoruMitsu.addEventListener("input", function() {
+		calculate(taoruMitsu, taoruMitsuTotal, 3900);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	taoruJil.addEventListener("input", function() {
+		calculate(taoruJil, taoruJilTotal, 3900);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+
+
+// リボンスカーフの計算
+	const scarfHaruki = document.getElementById("scarfHaruki");
+	const scarfHarukiTotal = document.getElementById("scarfHarukiTotal");
+
+	const scarfTake = document.getElementById("scarfTake");
+	const scarfTakeTotal = document.getElementById("scarfTakeTotal");
+
+	const scarfNeiro = document.getElementById("scarfNeiro");
+	const scarfNeiroTotal = document.getElementById("scarfNeiroTotal");
+
+	const scarfTsubasa = document.getElementById("scarfTsubasa");
+	const scarfTsubasaTotal = document.getElementById("scarfTsubasaTotal");
+
+	const scarfMitsu = document.getElementById("scarfMitsu");
+	const scarfMitsuTotal = document.getElementById("scarfMitsuTotal");
+
+	const scarfJil = document.getElementById("scarfJil");
+	const scarfJilTotal = document.getElementById("scarfJilTotal");
+
+	scarfHaruki.addEventListener("input", function() {
+		calculate(scarfHaruki, scarfHarukiTotal, 1700);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	scarfTake.addEventListener("input", function() {
+		calculate(scarfTake, scarfTakeTotal, 1700);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	scarfNeiro.addEventListener("input", function() {
+		calculate(scarfNeiro, scarfNeiroTotal, 1700);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	scarfTsubasa.addEventListener("input", function() {
+		calculate(scarfTsubasa, scarfTsubasaTotal, 1700);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	scarfMitsu.addEventListener("input", function() {
+		calculate(scarfMitsu, scarfMitsuTotal, 1700);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	scarfJil.addEventListener("input", function() {
+		calculate(scarfJil, scarfJilTotal, 1700);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+
+
+// VERSEリングライトの計算
+	const verseRingLight = document.getElementById("verseRingLight");
+	const verseRingLightTotal = document.getElementById("verseRingLightTotal");
+
+	verseRingLight.addEventListener("input", function() {
+		calculate(verseRingLight, verseRingLightTotal, 1000);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+
+
+// ペンライトシートの計算
+	const sheetHaruki = document.getElementById("sheetHaruki");
+	const sheetHarukiTotal = document.getElementById("sheetHarukiTotal");
+
+	const sheetTake = document.getElementById("sheetTake");
+	const sheetTakeTotal = document.getElementById("sheetTakeTotal");
+
+	const sheetNeiro = document.getElementById("sheetNeiro");
+	const sheetNeiroTotal = document.getElementById("sheetNeiroTotal");
+
+	const sheetTsubasa = document.getElementById("sheetTsubasa");
+	const sheetTsubasaTotal = document.getElementById("sheetTsubasaTotal");
+
+	const sheetMitsu = document.getElementById("sheetMitsu");
+	const sheetMitsuTotal = document.getElementById("sheetMitsuTotal");
+
+	const sheetJil = document.getElementById("sheetJil");
+	const sheetJilTotal = document.getElementById("sheetJilTotal");
+
+	sheetHaruki.addEventListener("input", function() {
+		calculate(sheetHaruki, sheetHarukiTotal, 400);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	sheetTake.addEventListener("input", function() {
+		calculate(sheetTake, sheetTakeTotal, 400);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	sheetNeiro.addEventListener("input", function() {
+		calculate(sheetNeiro, sheetNeiroTotal, 400);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	sheetTsubasa.addEventListener("input", function() {
+		calculate(sheetTsubasa, sheetTsubasaTotal, 400);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	sheetMitsu.addEventListener("input", function() {
+		calculate(sheetMitsu, sheetMitsuTotal, 400);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	sheetJil.addEventListener("input", function() {
+		calculate(sheetJil, sheetJilTotal, 400);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+
+
+// EL6 オフィシャルロゴライトの計算
+	const logoLight = document.getElementById("logoLight");
+	const logoLightTotal = document.getElementById("logoLightTotal");
+
+	logoLight.addEventListener("input", function() {
+		calculate(logoLight, logoLightTotal, 5000);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+
+
+// EL6 ペンライトの計算
+	const penLight = document.getElementById("penLight");
+	const penLightTotal = document.getElementById("penLightTotal");
+
+	penLight.addEventListener("input", function() {
+		calculate(penLight, penLightTotal, 3000);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+
+
+// EL6リングライトの計算
+	const ringLight = document.getElementById("ringLight");
+	const ringLightTotal = document.getElementById("ringLightTotal");
+
+	ringLight.addEventListener("input", function() {
+		calculate(ringLight, ringLightTotal, 1000);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+
+
+// VERSE Tシャツの計算
+	const tShirt = document.getElementById("tShirt");
+	const tShirtTotal = document.getElementById("tShirtTotal");
+
+	tShirt.addEventListener("input", function() {
+		calculate(tShirt, tShirtTotal, 4000);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+
+
+// オフィシャルうちわの計算
+	const uchiwaHaruki = document.getElementById("uchiwaHaruki");
+	const uchiwaHarukiTotal = document.getElementById("uchiwaHarukiTotal");
+
+	const uchiwaTake = document.getElementById("uchiwaTake");
+	const uchiwaTakeTotal = document.getElementById("uchiwaTakeTotal");
+
+	const uchiwaNeiro = document.getElementById("uchiwaNeiro");
+	const uchiwaNeiroTotal = document.getElementById("uchiwaNeiroTotal");
+
+	const uchiwaTsubasa = document.getElementById("uchiwaTsubasa");
+	const uchiwaTsubasaTotal = document.getElementById("uchiwaTsubasaTotal");
+
+	const uchiwaMitsu = document.getElementById("uchiwaMitsu");
+	const uchiwaMitsuTotal = document.getElementById("uchiwaMitsuTotal");
+
+	const uchiwaJil = document.getElementById("uchiwaJil");
+	const uchiwaJilTotal = document.getElementById("uchiwaJilTotal");
+
+	uchiwaHaruki.addEventListener("input", function() {
+		calculate(uchiwaHaruki, uchiwaHarukiTotal, 1200);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	uchiwaTake.addEventListener("input", function() {
+		calculate(uchiwaTake, uchiwaTakeTotal, 1200);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	uchiwaNeiro.addEventListener("input", function() {
+		calculate(uchiwaNeiro, uchiwaNeiroTotal, 1200);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	uchiwaTsubasa.addEventListener("input", function() {
+		calculate(uchiwaTsubasa, uchiwaTsubasaTotal, 1200);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	uchiwaMitsu.addEventListener("input", function() {
+		calculate(uchiwaMitsu, uchiwaMitsuTotal, 1200);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+	uchiwaJil.addEventListener("input", function() {
+		calculate(uchiwaJil, uchiwaJilTotal, 1200);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+
+
+// EL6 缶バッチの計算
+	const canBadge = document.getElementById("canBadge");
+	const canBadgeTotal = document.getElementById("canBadgeTotal");
+
+	canBadge.addEventListener("input", function() {
+		calculate(canBadge, canBadgeTotal, 500);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+
+
+// EL6 トレカの計算
+	const tradingCard = document.getElementById("tradingCard");
+	const tradingCardTotal = document.getElementById("tradingCardTotal");
+
+	tradingCard.addEventListener("input", function() {
+		calculate(tradingCard, tradingCardTotal, 300);
+		updateGrandTotal();
+		updatePurchaseList();
+	});
+
+
+
+// 合計の計算
+	function updateGrandTotal() {
+		const grandTotal =
+			Number(acstaHarukiTotal.textContent.replace(/,/g, "")) +
+			Number(acstaTakeTotal.textContent.replace(/,/g, "")) +
+			Number(acstaNeiroTotal.textContent.replace(/,/g, "")) +
+			Number(acstaTsubasaTotal.textContent.replace(/,/g, "")) +
+			Number(acstaMitsuTotal.textContent.replace(/,/g, "")) +
+			Number(acstaJilTotal.textContent.replace(/,/g, "")) +
+			Number(ackeyHarukiTotal.textContent.replace(/,/g, "")) +
+			Number(ackeyTakeTotal.textContent.replace(/,/g, "")) +
+			Number(ackeyNeiroTotal.textContent.replace(/,/g, "")) +
+			Number(ackeyTsubasaTotal.textContent.replace(/,/g, "")) +
+			Number(ackeyMitsuTotal.textContent.replace(/,/g, "")) +
+			Number(ackeyJilTotal.textContent.replace(/,/g, "")) +
+			Number(stickerTotal.textContent.replace(/,/g, "")) +
+			Number(taoruHarukiTotal.textContent.replace(/,/g, "")) +
+			Number(taoruTakeTotal.textContent.replace(/,/g, "")) +
+			Number(taoruNeiroTotal.textContent.replace(/,/g, "")) +
+			Number(taoruTsubasaTotal.textContent.replace(/,/g, "")) +
+			Number(taoruMitsuTotal.textContent.replace(/,/g, "")) +
+			Number(taoruJilTotal.textContent.replace(/,/g, "")) +
+			Number(scarfHarukiTotal.textContent.replace(/,/g, "")) +
+			Number(scarfTakeTotal.textContent.replace(/,/g, "")) +
+			Number(scarfNeiroTotal.textContent.replace(/,/g, "")) +
+			Number(scarfTsubasaTotal.textContent.replace(/,/g, "")) +
+			Number(scarfMitsuTotal.textContent.replace(/,/g, "")) +
+			Number(scarfJilTotal.textContent.replace(/,/g, "")) +
+			Number(verseRingLightTotal.textContent.replace(/,/g, "")) +
+			Number(sheetHarukiTotal.textContent.replace(/,/g, "")) +
+			Number(sheetTakeTotal.textContent.replace(/,/g, "")) +
+			Number(sheetNeiroTotal.textContent.replace(/,/g, "")) +
+			Number(sheetTsubasaTotal.textContent.replace(/,/g, "")) +
+			Number(sheetMitsuTotal.textContent.replace(/,/g, "")) +
+			Number(sheetJilTotal.textContent.replace(/,/g, "")) +
+			Number(logoLightTotal.textContent.replace(/,/g, "")) +
+			Number(penLightTotal.textContent.replace(/,/g, "")) +
+			Number(ringLightTotal.textContent.replace(/,/g, "")) +
+			Number(tShirtTotal.textContent.replace(/,/g, "")) +
+			Number(uchiwaHarukiTotal.textContent.replace(/,/g, "")) +
+			Number(uchiwaTakeTotal.textContent.replace(/,/g, "")) +
+			Number(uchiwaNeiroTotal.textContent.replace(/,/g, "")) +
+			Number(uchiwaTsubasaTotal.textContent.replace(/,/g, "")) +
+			Number(uchiwaMitsuTotal.textContent.replace(/,/g, "")) +
+			Number(uchiwaJilTotal.textContent.replace(/,/g, "")) +
+			Number(canBadgeTotal.textContent.replace(/,/g, "")) +
+			Number(tradingCardTotal.textContent.replace(/,/g, ""));
+
+	document.getElementById("grandTotal").textContent = grandTotal.toLocaleString();
+
+	}
+
+
+	function updatePurchaseList() {
+    		const purchaseList = document.getElementById("purchaseList");
+
+    		purchaseList.innerHTML = "";
+
+    		if (Number(acstaHaruki.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE アクリルスタンド 春希 × " + acstaHaruki.value + "<br>";
+    		}
+
+    		if (Number(acstaTake.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE アクリルスタンド ていく × " + acstaTake.value + "<br>";
+    		}
+
+    		if (Number(acstaNeiro.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE アクリルスタンド ねいろ × " + acstaNeiro.value + "<br>";
+    		}
+
+    		if (Number(acstaTsubasa.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE アクリルスタンド ツバサ × " + acstaTsubasa.value + "<br>";
+    		}
+
+    		if (Number(acstaMitsu.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE アクリルスタンド 832 × " + acstaMitsu.value + "<br>";
+    		}
+
+    		if (Number(acstaJil.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE アクリルスタンド JIL × " + acstaJil.value + "<br>";
+    		}
+
+    		if (Number(ackeyHaruki.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE アクリルキーホルダー 春希 × " + ackeyHaruki.value + "<br>";
+    		}
+
+    		if (Number(ackeyTake.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE アクリルキーホルダー ていく × " + ackeyTake.value + "<br>";
+    		}
+
+    		if (Number(ackeyNeiro.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE アクリルキーホルダー ねいろ × " + ackeyNeiro.value + "<br>";
+    		}
+
+    		if (Number(ackeyTsubasa.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE アクリルキーホルダー ツバサ × " + ackeyTsubasa.value + "<br>";
+    		}
+
+    		if (Number(ackeyMitsu.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE アクリルキーホルダー 832 × " + ackeyMitsu.value + "<br>";
+    		}
+
+    		if (Number(ackeyJil.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE アクリルキーホルダー JIL × " + ackeyJil.value + "<br>";
+    		}
+
+    		if (Number(sticker.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE ステッカーセット × " + sticker.value + "<br>";
+    		}
+
+    		if (Number(taoruHaruki.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE BIGピクチャータオル 春希 × " + taoruHaruki.value + "<br>";
+    		}
+
+    		if (Number(taoruTake.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE BIGピクチャータオル ていく × " + taoruTake.value + "<br>";
+    		}
+
+    		if (Number(taoruNeiro.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE BIGピクチャータオル ねいろ × " + taoruNeiro.value + "<br>";
+    		}
+
+    		if (Number(taoruTsubasa.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE BIGピクチャータオル ツバサ × " + taoruTsubasa.value + "<br>";
+    		}
+
+    		if (Number(taoruMitsu.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE BIGピクチャータオル 832 × " + taoruMitsu.value + "<br>";
+    		}
+
+    		if (Number(taoruJil.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE BIGピクチャータオル JIL × " + taoruJil.value + "<br>";
+    		}
+
+    		if (Number(scarfHaruki.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE リボンスカーフ 春希 × " + scarfHaruki.value + "<br>";
+    		}
+
+    		if (Number(scarfTake.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE リボンスカーフ ていく × " + scarfTake.value + "<br>";
+    		}
+
+    		if (Number(scarfNeiro.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE リボンスカーフ ねいろ × " + scarfNeiro.value + "<br>";
+    		}
+
+    		if (Number(scarfTsubasa.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE リボンスカーフ ツバサ × " + scarfTsubasa.value + "<br>";
+    		}
+
+    		if (Number(scarfMitsu.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE リボンスカーフ 832 × " + scarfMitsu.value + "<br>";
+    		}
+
+    		if (Number(scarfJil.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE リボンスカーフ JIL × " + scarfJil.value + "<br>";
+    		}
+
+    		if (Number(verseRingLight.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE リングライト × " + verseRingLight.value + "<br>";
+		}
+
+    		if (Number(sheetHaruki.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE ペンライトシート 春希 × " + sheetHaruki.value + "<br>";
+    		}
+
+    		if (Number(sheetTake.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE ペンライトシート ていく × " + sheetTake.value + "<br>";
+    		}
+
+    		if (Number(sheetNeiro.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE ペンライトシート ねいろ × " + sheetNeiro.value + "<br>";
+    		}
+
+    		if (Number(sheetTsubasa.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE ペンライトシート ツバサ × " + sheetTsubasa.value + "<br>";
+    		}
+
+    		if (Number(sheetMitsu.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE ペンライトシート 832 × " + sheetMitsu.value + "<br>";
+    		}
+
+    		if (Number(sheetJil.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE ペンライトシート JIL × " + sheetJil.value + "<br>";
+    		}
+
+    		if (Number(logoLight.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"EL6 オフィシャルロゴライト × " + logoLight.value + "<br>";
+		}
+
+    		if (Number(penLight.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"EL6 ペンライト × " + penLight.value + "<br>";
+		}
+
+    		if (Number(ringLight.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"EL6 リングライト × " + ringLight.value + "<br>";
+		}
+
+    		if (Number(tShirt.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE Tシャツ × " + tShirt.value + "<br>";
+		}
+
+    		if (Number(uchiwaHaruki.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE EL6オフィシャルうちわ 春希 × " + uchiwaHaruki.value + "<br>";
+    		}
+
+    		if (Number(uchiwaTake.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE EL6オフィシャルうちわ ていく × " + uchiwaTake.value + "<br>";
+    		}
+
+    		if (Number(uchiwaNeiro.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE EL6オフィシャルうちわ ねいろ × " + uchiwaNeiro.value + "<br>";
+    		}
+
+    		if (Number(uchiwaTsubasa.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE EL6オフィシャルうちわ ツバサ × " + uchiwaTsubasa.value + "<br>";
+    		}
+
+    		if (Number(uchiwaMitsu.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE EL6オフィシャルうちわ 832 × " + uchiwaMitsu.value + "<br>";
+    		}
+
+    		if (Number(uchiwaJil.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"VERSE EL6オフィシャルうちわ JIL × " + uchiwaJil.value + "<br>";
+    		}
+
+    		if (Number(canBadge.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"【第7弾】EL6 ランダム缶バッチ × " + canBadge.value + "<br>";
+		}
+
+    		if (Number(tradingCard.value) > 0) {
+        		purchaseList.innerHTML +=
+            			"【第7弾】EL6 ランダムチェキ風トレカ × " + tradingCard.value + "<br>";
+		}
+
+
+
+	}
+
+
+// 数字入力を保存する
+		const numberInputs = document.querySelectorAll('input[type="number"]');
+
+		numberInputs.forEach(input => {
+    			input.addEventListener("input", function() {
+        		localStorage.setItem(input.id, input.value);
+    			});
+		});
+
+// 保存した数字を復元する
+		numberInputs.forEach(input => {
+    			const savedValue = localStorage.getItem(input.id);
+
+    			if (savedValue !== null) {
+        			input.value = savedValue;
+        			input.dispatchEvent(new Event("input"));
+    			}
+		});
+
+
+
+	document.querySelectorAll(".quantity").forEach(function(quantity) {
+
+    		const input = quantity.querySelector("input");
+    		const minus = quantity.querySelector(".minus");
+    		const plus = quantity.querySelector(".plus");
+
+    		minus.addEventListener("click", function() {
+        		if (Number(input.value) > 0) {
+            			input.value = Number(input.value) - 1;
+            			input.dispatchEvent(new Event("input"));
+        		}
+    		});
+
+    		plus.addEventListener("click", function() {
+        		input.value = Number(input.value) + 1;
+        		input.dispatchEvent(new Event("input"));
+    		});
+
+	});
+
+
+
+</script>
+
+</body>
+</html>
