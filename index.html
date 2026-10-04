@@ -176,6 +176,38 @@
 	}
 
 
+	#resetButton {
+    		position: fixed;
+    		top: 20px;
+    		right: 20px;
+
+    		background: #1c1c1c;
+    		color: #ffffff;
+
+    		border: 1px solid #888888;
+    		border-radius: 8px;
+
+    		padding: 8px 16px;
+
+    		font-size: 14px;
+    		cursor: pointer;
+
+    		box-shadow:
+        		0 0 5px rgba(255, 255, 255, 0.4),
+        		0 0 12px rgba(255, 255, 255, 0.15);
+
+    		z-index: 1000;
+	}
+
+	#resetButton:hover {
+    		background: #2a2a2a;
+    		border-color: #ffffff;
+
+    		box-shadow:
+        		0 0 8px rgba(255, 255, 255, 0.6),
+        		0 0 16px rgba(255, 255, 255, 0.25);
+	}
+
 
 	</style>
 
@@ -834,6 +866,8 @@
 	<p><span id="grandTotal">0</span>円</p>
 
 </div>
+
+	<button type="button" id="resetButton">リセット</button>
 
 
 <div class="goods-card">
@@ -1616,6 +1650,20 @@
     		});
 
 	});
+
+
+	const resetButton = document.getElementById("resetButton");
+
+		resetButton.addEventListener("click", function() {
+
+    		document.querySelectorAll('input[type="number"]').forEach(function(input) {
+        		input.value = 0;
+        		localStorage.removeItem(input.id);
+        		input.dispatchEvent(new Event("input"));
+    		});
+
+	});
+
 
 
 
